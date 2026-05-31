@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grandparent{
+            border: 2px solid red;
+            background-color: rosybrown;
+
+        }
+         .parent{
+            background-color: rgb(192, 241, 192);
+            border: 5px solid black;
+        }
+            /*
+        .child{
+            background-color: blue;
+        }
+        .grandchild{
+            background-color: yellow;
+        }
+        .greatgrandchild{
+            background-color: pink;
+        } */
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Traversing up/ancestors </h1>
+    <h1>children---->parent</h1>
+    <h1>parent()</h1>
+    <h1>parents()</h1>
+    <h1>parentsUntil()</h1>
+
+    <div class="grandparent"><h1>grandparent</h1>
+        <div class="parent"><h1>parent</h1>
+            <div class="child"><h1>Child</h1>
+                <div class="grandchild"> <h1>Grand Child</h1>
+                    <div class="greatgrandchild">
+                        <h1>Great Grand Child</h1>
+                   </div>
+                    <div class="greatgrandchild">
+                        <h1>Great Grand Child2</h1>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function(){
+            
+                // parent() method
+  $(".greatgrandchild").parent().css( "border", "5px solid blue");
+
+            // parents() method
+    $(".greatgrandchild").parents().css( "border", "5px solid green");
+
+            // parentsUntil() method
+    $(".greatgrandchild").parentsUntil(".parent").css( "border", "5px solid pink");
+        })(jQuery);
+        //closest method()
+        $(document).ready(function($){
+          $(".greatgrandchild").closest(".parent").css( "border", "5px solid orange");
+        })
+
+
+        ()
+    </script>
+    
+</body>
+</html>
